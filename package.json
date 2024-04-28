@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "moment-timezone": "^0.5.44",
+    "moment-timezone": "^0.5.45",
     "socket.io": "^4.7.4"
   }
 }
