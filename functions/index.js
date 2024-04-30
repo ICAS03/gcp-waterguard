@@ -15,7 +15,7 @@ exports.syncToBigQuery = functions.database
       try {
         const bigquery = new BigQuery();
         const datasetId = "waterguard_dataset";
-        const tableId = "sensorlevel";
+        const tableId = "sensorData";
         const timestamp = moment().tz("Asia/Singapore").format();
 
         const verydangerous = 170;
