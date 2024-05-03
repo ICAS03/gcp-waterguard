@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../gcp-waterguard/node_modules"
+		}
+	],
+	"settings": {}
+}
