@@ -15,22 +15,25 @@ exports.syncToBigQuery = functions.database
       try {
         const bigquery = new BigQuery();
         const datasetId = "waterguard_dataset";
-        const tableId = "sensorlevel";
+        const tableId = "sensorData2";
         const timestamp = moment().tz("Asia/Singapore").format();
 
-        const verydangerous = 170;
-        const belownormal = 150;
-        const dangerous = 160;
+        const flood = 70;
+        const high = 75;
+        const medium = 80;
+        const low = 94;
 
         let status;
-        if (newValue > verydangerous) {
-          status = "very dangerous";
-        } else if (newValue > dangerous) {
-          status = "dangerous";
-        } else if (newValue > belownormal) {
-          status = "normal";
+        if (newValue <= flood) {
+          status = "flood";
+        } else if (newValue >= flood && newValue <= high) {
+          status = "high";
+        } else if (newValue >= high && newValue < medium) {
+          status = "medium";
+        } else if(newValue >= medium && newValue <= low){
+          status = "low";
         } else {
-          status = "below normal";
+          status = "very low";
         }
 
         const row = {
